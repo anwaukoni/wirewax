@@ -84,6 +84,8 @@ EXTRA CHALLENGES:
 
 function showTagContent() {
   console.log("showTagContent");
+  var show = $(".show");
+  show.text("<p>This is a test<p>");
 }
 
 function animateOutTagContent() {
