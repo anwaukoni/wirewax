@@ -87,7 +87,17 @@ function showTagContent() {
   console.log("showTagContent");
   var show = $(".show");
   var canvas= new Raphael(document.getElementById('myTag'), 100, 100);
-  var locationMarker = canvas.path("M50,99.5l-1.3-1.8C47.4,95.9,16,53.1,16,34.7C16,15.8,31.2,0.5,50,0.5c18.8,0,34,15.4,34,34.2 c0,18.3-31.4,61.2-32.7,63L50,99.5z M50,3.7c-17,0-30.8,13.9-30.8,31C19.2,50,44,85.6,50,94c6-8.4,30.8-44,30.8-59.3 C80.8,17.6,67,3.7,50,3.7z");
+  var svg = mySVG[4];
+  var locationMarker = canvas.path(svg.path);
+      locationMarker.attr({
+        "fill" : svg.fill,
+        "stroke" : svg.stroke
+      });
+      canvas.circle(50,35,20)
+        .attr({
+          'stroke-width' : 5,
+          "stroke" : svg.fill
+        });
 
   show.append("<div class='all-text'> click to learn about <br/><span class='upper-case-text'>THE LONDON EYE</span></div>")
       .append(locationMarker);
