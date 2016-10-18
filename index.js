@@ -104,9 +104,9 @@ function showTagContent() {
         "opacity": 0.18
       }).transform("s0.80");
 
-      canvas.circle(20,20,5)
+      canvas.circle(50,43,11)
         .attr({
-          'stroke-width' : 5,
+          'stroke-width' : 2,
           "stroke" : svg.fill
         });
 

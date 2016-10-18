@@ -31,18 +31,21 @@
 }
 /*     END DEFAULT STYLE     */
 
+svg {
+  transform: translate(50px, 10px);
+}
+
+}
 #myTag{
   display: table;
 }
-
-
 
 
 .show {
 
 }
 
-div.all-text{
+div.all-text {
   font-family: 'Crimson Text', serif;
   font-size: 0.8em;
   color: white;
@@ -50,6 +53,7 @@ div.all-text{
   display: table-cell;
   text-align: center;
   vertical-align: middle;
+  position: absolute;
 }
 
 .upper-case-text{
