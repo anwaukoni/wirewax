@@ -1,3 +1,4 @@
+$(document).ready(function() {
 //      INITIAL CODE - DON'T EDIT THIS    //
 var myTag = $('#myTag');
 var myOverlay = $('#myOverlay');
@@ -17,10 +18,10 @@ function animateOutTag() {
 }
 
 function hideTag() {
-  myTag.removeClass('show');
-  myTag.removeClass('animate-out');
-  myTag.hide();
-  hideTagContent();
+  // myTag.removeClass('show');
+  // myTag.removeClass('animate-out');
+  // myTag.hide();
+  // hideTagContent();
 }
 
 function showOverlay() {
@@ -85,7 +86,8 @@ EXTRA CHALLENGES:
 function showTagContent() {
   console.log("showTagContent");
   var show = $(".show");
-  show.text("<p>This is a test<p>");
+  show.append("<p>click to learn more about the</p>" +
+              "<p><span class='london'>THE LONDON EYE</span></p>");
 }
 
 function animateOutTagContent() {
@@ -111,3 +113,5 @@ function hideOverlayContent() {
 // This is just here for you to see the tag more easily. You should delete this after starting working.
 myTag.css('background', 'green');
 myOverlay.css('background', 'white');
+
+});

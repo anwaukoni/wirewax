@@ -32,9 +32,16 @@
 /*     END DEFAULT STYLE     */
 
 .show {
+  font-family: 'Crimson Text', serif;
+  font-size: 2em;
+}
 
+#myVideo{
+  font-family: 'Crimson Text', serif;
+  font-size: 0.25em;
+  font-style: italic;
 }
 
 .animate-out{
-  
+
 }
