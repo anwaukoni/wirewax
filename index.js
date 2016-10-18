@@ -92,21 +92,19 @@ function showTagContent() {
       locationMarker.attr({
         "fill" : svg.fill,
         "stroke" : svg.stroke
-      });
+      }).transform('s0.5');
   var markerTwo = canvas.path(svg.path).attr({
         "fill" : svg.fill,
-        "stroke" : svg.stroke
-      }).transform("s1.25");
+        "stroke" : svg.stroke,
+        "opacity": 0.6
+      }).transform("s0.65");
   var markerThree = canvas.path(svg.path).attr({
         "fill" : svg.fill,
-        "stroke" : svg.stroke
-      }).transform("s1.50");
+        "stroke" : svg.stroke,
+        "opacity": 0.18
+      }).transform("s0.80");
 
-      // secondMarker.attr({
-      //   "fill" : svg.fill,
-      //   "stroke" : svg.stroke
-      // });
-      canvas.circle(50,35,20)
+      canvas.circle(20,20,5)
         .attr({
           'stroke-width' : 5,
           "stroke" : svg.fill
