@@ -86,10 +86,7 @@ EXTRA CHALLENGES:
 function showTagContent() {
   console.log("showTagContent");
   var show = $(".show");
-  show.append("<div class='all-text'> click to learn about the <br/><span class='upper-case-text'>THE LONDON EYE</span></div>");
-
-              // ("<p class='lower-case-text'>click to learn about the</p>" +
-              //             "<p><span class='upper-case-text'>THE LONDON EYE</span></p>");
+  show.append("<div class='all-text'> click to learn about <br/><span class='upper-case-text'>THE LONDON EYE</span></div>");
 }
 
 function animateOutTagContent() {
@@ -117,3 +114,6 @@ myTag.css('background', 'green');
 myOverlay.css('background', 'white');
 
 });
+
+// ("<p class='lower-case-text'>click to learn about the</p>" +
+// "<p><span class='upper-case-text'>THE LONDON EYE</span></p>");
