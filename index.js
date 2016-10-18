@@ -93,6 +93,19 @@ function showTagContent() {
         "fill" : svg.fill,
         "stroke" : svg.stroke
       });
+  var markerTwo = canvas.path(svg.path).attr({
+        "fill" : svg.fill,
+        "stroke" : svg.stroke
+      }).transform("s1.25");
+  var markerThree = canvas.path(svg.path).attr({
+        "fill" : svg.fill,
+        "stroke" : svg.stroke
+      }).transform("s1.50");
+
+      // secondMarker.attr({
+      //   "fill" : svg.fill,
+      //   "stroke" : svg.stroke
+      // });
       canvas.circle(50,35,20)
         .attr({
           'stroke-width' : 5,
