@@ -51,7 +51,7 @@ setTimeout(animateOutTag, tagStartTime + tagDuration - tagAnimateOutTime);
 
 DESCRIPTION:
 
-This is a challenge exercise for WIREWAX where we test your HTML, CSS, Javascript and creative skills. Please read the rules and challenges goals. If you have any question, don't hesitate to email us.
+This is a challenge exercise to test your HTML, CSS, Javascript and creative skills. Please read the rules and challenges goals. If you have any question, don't hesitate to email us.
 Fork this jsfiddle or create a github project and email us the url in the end of the exercise.
 Good luck :)
 
@@ -111,11 +111,14 @@ function showTagContent() {
         });
 
   show.append("<div class='all-text'> click to learn about <br/><span class='upper-case-text'>THE LONDON EYE</span></div>")
-      .append(locationMarker);
+      .append(locationMarker).hide().fadeIn(2000);
+
+  // $('<p>hello</p>').hide().appendTo(parent).show('normal');
 }
 
 function animateOutTagContent() {
   console.log("animateOutTagContent");
+  //jquery animate out
 }
 
 function hideTagContent() {
