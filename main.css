@@ -45,11 +45,11 @@
 div.all-text{
   font-family: 'Crimson Text', serif;
   font-size: 0.8em;
+  color: white;
   font-style: italic;
   display: table-cell;
   text-align: center;
   vertical-align: middle;
-
 }
 
 .upper-case-text{
