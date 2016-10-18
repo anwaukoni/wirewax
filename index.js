@@ -2,7 +2,7 @@ $(document).ready(function() {
 //      INITIAL CODE - DON'T EDIT THIS    //
 var myTag = $('#myTag');
 var myOverlay = $('#myOverlay');
-var tagStartTime = 2000;
+var tagStartTime = 500;
 var tagDuration = 5000;
 var tagAnimateOutTime = 1000;
 
@@ -86,8 +86,10 @@ EXTRA CHALLENGES:
 function showTagContent() {
   console.log("showTagContent");
   var show = $(".show");
-  show.append("<p>click to learn more about the</p>" +
-              "<p><span class='london'>THE LONDON EYE</span></p>");
+  show.append("<div class='all-text'> click to learn about the <br/><span class='upper-case-text'>THE LONDON EYE</span></div>");
+
+              // ("<p class='lower-case-text'>click to learn about the</p>" +
+              //             "<p><span class='upper-case-text'>THE LONDON EYE</span></p>");
 }
 
 function animateOutTagContent() {
