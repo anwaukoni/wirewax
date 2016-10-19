@@ -175,17 +175,16 @@ function hideTagContent() {
 
 function showOverlayContent() {
   console.log("showOverlayContent");
-  var $show = $('.show');
+  // var $show = $('.show');
   // show.append("<ul class='slides'>");
   // config
     var sliderFrequency=2000;
     var slideSpeed=1000;
     var width=720;
 
-    // Caching Dom
-    var $slider = $('#myOverlay').find($('#slider'));
-    var $slideContainer = $slider.find('.slides');
-    var $slides = $slider.find('.slide');
+    var $show = $('.show');
+    var $slideContainer = $show.find('.slides');
+    var $slides = $show.find('.slide');
     var slideDigit = 1;
     var interval;
 
