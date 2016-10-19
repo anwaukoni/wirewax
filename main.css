@@ -35,6 +35,12 @@ svg {
   transform: translate(50px, 10px);
 }
 
+canvas{
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+};
+
 }
 #myTag{
   display: table;

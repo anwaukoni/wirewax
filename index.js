@@ -13,8 +13,8 @@ function showTag() {
 }
 
 function animateOutTag() {
-  myTag.addClass('animate-out');
-  animateOutTagContent();
+  // myTag.addClass('animate-out');
+  // animateOutTagContent();
 }
 
 function hideTag() {
@@ -86,8 +86,11 @@ EXTRA CHALLENGES:
 function showTagContent() {
   console.log("showTagContent");
   var show = $(".show");
-  var canvas= new Raphael(document.getElementById('myTag'), 100, 100);
+  var canvas = new Raphael(document.getElementById('myTag'), 100, 100);
   var svg = mySVG[4];
+  var centerX = 50;
+  var centerY = 43;
+  var radius = 11
   var locationMarker = canvas.path(svg.path);
       locationMarker.attr({
         "fill" : svg.fill,
@@ -104,21 +107,53 @@ function showTagContent() {
         "opacity": 0.18
       }).transform("s0.80");
 
-      canvas.circle(50,43,11)
-        .attr({
-          'stroke-width' : 2,
-          "stroke" : svg.fill
-        });
+  canvas.circle(centerX, centerY, radius)
+    .attr({
+      "stroke-width" : 4,
+      "stroke" : svg.fill
+    });
+
+  canvas.customAttributes.arc = function (Cx, Cy, value, total, R) {
+    var alpha = 360 / total * value,
+        a = (90 - alpha) * Math.PI / 180,
+        x = Cx + R * Math.cos(a),
+        y = Cy - R * Math.sin(a),
+        path;
+    if (total == value) {
+        path = [
+            ["M", Cx, Cy - R],
+            ["A", R, R, 0, 1, 1, Cx - 0.01, Cy - R]
+        ];
+    } else {
+        path = [
+            ["M", Cx, Cy - R],
+            ["A", R, R, 0, +(alpha > 180), 1, x, y]
+        ];
+    }
+    return {
+        path: path
+    };
+  };
+
+  var circlePath = canvas.path().attr({
+    "stroke": "#46E4C1",
+    "stroke-width": 4,
+    arc: [centerX, centerY, 0, 100, radius]
+  })
+
+  circlePath.animate({
+      arc: [centerX, centerY, 100, 100, radius]
+  },tagDuration);
+
 
   show.append("<div class='all-text'> click to learn about <br/><span class='upper-case-text'>THE LONDON EYE</span></div>")
-      .append(locationMarker).hide().fadeIn(2000);
-
-  // $('<p>hello</p>').hide().appendTo(parent).show('normal');
+      .append(locationMarker).hide().fadeIn(500);
 }
 
 function animateOutTagContent() {
   console.log("animateOutTagContent");
-  //jquery animate out
+  var show = $(".show");
+  show.fadeOut(500);
 }
 
 function hideTagContent() {
@@ -127,6 +162,8 @@ function hideTagContent() {
 
 function showOverlayContent() {
   console.log("showOverlayContent");
+  var show = $('.show');
+  show.html('This is overlay')
 }
 
 function animateOutOverlayContent() {
@@ -138,8 +175,8 @@ function hideOverlayContent() {
 }
 
 // This is just here for you to see the tag more easily. You should delete this after starting working.
-// myTag.css('background', 'green');
-// myOverlay.css('background', 'white');
+myTag.css('background', 'green');
+myOverlay.css('background', 'white');
 
 });
 
