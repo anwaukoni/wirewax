@@ -3,9 +3,12 @@
 #myVideo {
   position: relative;
   overflow: hidden;
-  width: 70%;
-  height: 0;
-  padding-bottom: 39.25%;
+  /*width: 70%;
+  height: 0;*/
+  width:720px;
+  height:400px;
+  /*padding-bottom: 39.25%;*/
+  /*padding: 50px;*/
   margin: 5%;
   background: url('http://edge-assets.wirewax.com/creativeData/devChallenge/london.jpg');
   background-position: 0 0;
@@ -15,10 +18,13 @@
 }
 
 #myTag {
-  width: 29.23%;
+  /*width: 29.23%;*/
+  width: 50%;
   height: 35.87%;
-  top: 5.565%;
-  left: 45.565%;
+  /*top: 5.565%;*/
+  /*left: 45.565%;*/
+  top: 10%;
+  left: 47%;
   position: absolute;
   display: none;
 }
@@ -28,6 +34,9 @@
   position: absolute;
   height: 100%;
   width: 100%;
+  width:720px;
+  height:400px;
+
 }
 /*     END DEFAULT STYLE     */
 
@@ -70,4 +79,49 @@ div.all-text {
 
 .animate-out{
 
+}
+
+#slider {
+    width: 720px;
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+    overflow: hidden;
+}
+
+#slider .slides {
+    display: block;
+    width: 6000px;
+    height: 400px;
+    margin: 0;
+    padding: 0;
+}
+
+#slider .slide {
+    float: left;
+    list-style-type: none;
+    width: 720px;
+    height: 400px;
+}
+
+/* helper css, since we don't have images */
+.slide1 {
+  background: url('http://wall--art.com/wp-content/uploads/2014/10/london-eye-at-sunset.jpg');
+  background-size: cover;
+}
+.slide2 {
+  background: url('http://1920x1080hdwallpapers.com/image/201502/city/356/the-london-eye-river-london-england-650x366.jpg');
+  background-size: cover;
+}
+.slide3 {
+  background: url('http://hd.wallpaperswide.com/thumbs/london_eye_5-t2.jpg');
+  background-size: cover;
+}
+.slide4 {
+  background: url('http://bighdwalls.com/wp-content/uploads/london-eye-Hd-wallpaper.jpg');
+  background-size: cover;
+}
+.slide5 {
+  background: url('https://i.ytimg.com/vi/P3H7W71DwHs/maxresdefault.jpg');
+  background-size: cover;
 }

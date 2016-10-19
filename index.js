@@ -93,8 +93,7 @@ function showTagContent() {
   var radius = 11;
   var normalColor = svg.fill;
   var torquoiseColor = "#46E4C1";
-  var marker = canvas.path(svg.path);
-  var markerOne = marker.attr({
+  var markerOne = canvas.path(svg.path).attr({
         "fill" : svg.fill,
         "stroke" : svg.stroke
       }).transform('s0.5');
@@ -158,7 +157,6 @@ function showTagContent() {
   });
 
   show.mouseleave(function(event) {
-    /* Act on the event */
     markerOne.attr({"fill" : normalColor});
     markerTwo.attr({"fill" : normalColor});
     markerThree.attr({"fill" : normalColor});
@@ -177,8 +175,41 @@ function hideTagContent() {
 
 function showOverlayContent() {
   console.log("showOverlayContent");
-  var show = $('.show');
-  show.html('This is overlay')
+  var $show = $('.show');
+  // show.append("<ul class='slides'>");
+  // config
+    var sliderFrequency=2000;
+    var slideSpeed=1000;
+    var width=720;
+
+    // Caching Dom
+    var $slider = $('#myOverlay').find($('#slider'));
+    var $slideContainer = $slider.find('.slides');
+    var $slides = $slider.find('.slide');
+    var slideDigit = 1;
+    var interval;
+
+    function startSlider(){
+        interval=
+    setInterval(function(){
+        $slideContainer.animate({'margin-left':'-='+width}, slideSpeed,
+            function(){
+                        if (++slideDigit === $slides.length){
+                        slideDigit=1;$slideContainer.css('margin-left',0);
+                    }
+            });
+            },sliderFrequency);
+    }
+
+   function stopSlider(){
+    clearInterval(interval);
+   }
+
+    $slideContainer.mouseenter(stopSlider);
+    $slideContainer.mouseleave(startSlider);
+
+    startSlider();
+
 }
 
 function animateOutOverlayContent() {
