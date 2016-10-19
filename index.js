@@ -90,9 +90,11 @@ function showTagContent() {
   var svg = mySVG[4];
   var centerX = 50;
   var centerY = 43;
-  var radius = 11
-  var locationMarker = canvas.path(svg.path);
-      locationMarker.attr({
+  var radius = 11;
+  var normalColor = svg.fill;
+  var torquoiseColor = "#46E4C1";
+  var marker = canvas.path(svg.path);
+  var markerOne = marker.attr({
         "fill" : svg.fill,
         "stroke" : svg.stroke
       }).transform('s0.5');
@@ -136,7 +138,7 @@ function showTagContent() {
   };
 
   var circlePath = canvas.path().attr({
-    "stroke": "#46E4C1",
+    "stroke": torquoiseColor,
     "stroke-width": 4,
     arc: [centerX, centerY, 0, 100, radius]
   })
@@ -147,7 +149,20 @@ function showTagContent() {
 
 
   show.append("<div class='all-text'> click to learn about <br/><span class='upper-case-text'>THE LONDON EYE</span></div>")
-      .append(locationMarker).hide().fadeIn(500);
+      .append(markerOne).hide().fadeIn(500);
+
+  show.mouseenter(function(){
+    markerOne.attr({"fill" : torquoiseColor});
+    markerTwo.attr({"fill" : torquoiseColor});
+    markerThree.attr({"fill" : torquoiseColor});
+  });
+
+  show.mouseleave(function(event) {
+    /* Act on the event */
+    markerOne.attr({"fill" : normalColor});
+    markerTwo.attr({"fill" : normalColor});
+    markerThree.attr({"fill" : normalColor});
+  });
 }
 
 function animateOutTagContent() {
@@ -175,8 +190,8 @@ function hideOverlayContent() {
 }
 
 // This is just here for you to see the tag more easily. You should delete this after starting working.
-myTag.css('background', 'green');
-myOverlay.css('background', 'white');
+// myTag.css('background', 'green');
+// myOverlay.css('background', 'white');
 
 });
 
