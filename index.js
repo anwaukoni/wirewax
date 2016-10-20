@@ -116,6 +116,9 @@ $(document).ready(function() {
         "stroke" : svg.fill
       });
 
+      //
+      //Arc calculator for circle in the location marker
+      //
     canvas.customAttributes.arc = function (Cx, Cy, value, total, R) {
       var alpha = 360 / total * value,
           a = (90 - alpha) * Math.PI / 180,
@@ -180,7 +183,6 @@ $(document).ready(function() {
     console.log("showOverlayContent");
     hideTagContent();
     var $show = $('.show');
-    // var $slideContainer = $show.find('.slide');
     var $slides = $show.find('.slides');
     var slideDigit = 1;
     var interval;
@@ -206,6 +208,9 @@ $(document).ready(function() {
       $slideContainer.append($('<li class="slide slide' + ((index % (data.length-1)) +1) + '">').text(element.fact));
     });
 
+    //
+    //Function that keeps slider in a loop and controls frequncy and speed
+    //
       function startSlider(){
           interval=
       setInterval(function(){
@@ -227,12 +232,15 @@ $(document).ready(function() {
 
       startSlider();
 
-      var $cancel = $('<button>').text('Cancel').appendTo($('#myVideo'));
+      //
+      //Cancel button and event to disable slider
+      //
+      var $cancel = $('<div class="button">').appendTo($('#myVideo'));
       $cancel.click(function(){
 
         console.log('cancel clicked')
         animateOutOverlayContent();
-        $('button').hide();
+        $('.button').hide();
       });
   }
 
@@ -249,6 +257,5 @@ $(document).ready(function() {
     var $ul = $('#myOverlay').find('ul');
     $ul.hide();
   }
-
 
 });

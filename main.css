@@ -73,8 +73,6 @@ div.all-text {
 
 
 #myOverlay .show {
-    /*width: 720px;
-    height: 400px;*/
     width: 720px;
     height: 300px;
     margin-top: 10px;
@@ -93,8 +91,6 @@ div.all-text {
 .show .slide {
     float: left;
     list-style-type: none;
-    /*width: 720px;
-    height: 400px;*/
     width: 720px;
     height: 300px;
     margin-top: 10px;
@@ -103,20 +99,47 @@ div.all-text {
 .slide1 {
   background: url('http://wall--art.com/wp-content/uploads/2014/10/london-eye-at-sunset.jpg');
   background-size: cover;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 240px;
 }
+
 .slide2 {
   background: url('http://1920x1080hdwallpapers.com/image/201502/city/356/the-london-eye-river-london-england-650x366.jpg');
   background-size: cover;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 240px;
 }
+
 .slide3 {
   background: url('http://hd.wallpaperswide.com/thumbs/london_eye_5-t2.jpg');
   background-size: cover;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 240px;
 }
+
 .slide4 {
   background: url('http://bighdwalls.com/wp-content/uploads/london-eye-Hd-wallpaper.jpg');
   background-size: cover;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 240px;
 }
+
 .slide5 {
   background: url('https://i.ytimg.com/vi/P3H7W71DwHs/maxresdefault.jpg');
   background-size: cover;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 240px;
 }
+
+.button {
+  background: url(http://icons.veryicon.com/ico/System/iOS%207/Very%20Basic%20Cancel.ico);
+  background-size: contain;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+};
