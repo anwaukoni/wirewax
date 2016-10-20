@@ -191,12 +191,12 @@ $(document).ready(function() {
     var width=720;
     var londonFactsList = []
     var data = [
-      {"fact" : "The London eye receives more visitors than per year than the Taj Mahal"},
-      {"fact" : "The london eye provides panoramic views of the South Bank Cultural Complex"},
+      {"fact" : "The London Eye receives more visitors than per year than the Taj Mahal"},
+      {"fact" : "The london Eye provides panoramic views of the South Bank Cultural Complex"},
       {"fact" : "The London Eye is not a ferris wheel"},
       {"fact" : "It is the world's tallest cantillevered observation wheel"},
-      {"fact" : "London Eye has a predecessor - The Great wheel"},
-      {"fact" : "The London eye receives more visitors than per year than the Taj Mahal"}
+      {"fact" : "London Eye has a predecessor - The Great Wheel"},
+      {"fact" : "The London Eye receives more visitors than per year than the Taj Mahal"}
     ];
 
     var $slideContainer = $('<ul class="slides">').appendTo($('#myOverlay'));
