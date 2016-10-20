@@ -43,8 +43,10 @@ function closeOverlay() {
 
 myTag.click(showOverlay);
 setTimeout(showTag, tagStartTime);
-setTimeout(hideTag, tagStartTime + tagDuration);
-setTimeout(animateOutTag, tagStartTime + tagDuration - tagAnimateOutTime);
+setTimeout(hideTag, tagStartTime + tagDuration + tagAnimateOutTime);
+// setTimeout(animateOutTag, tagStartTime + tagDuration - tagAnimateOutTime);
+setTimeout(animateOutTag, tagStartTime + tagDuration);
+
 //     END OF INITIAL CODE      //
 
 /*
@@ -166,34 +168,63 @@ function showTagContent() {
 function animateOutTagContent() {
   console.log("animateOutTagContent");
   var show = $(".show");
-  show.fadeOut(500);
+  show.fadeOut(1000);
 }
 
+//pauses the content from the tag temporarily
 function hideTagContent() {
   console.log("hideTagContent");
+  $('#myTag').hide();
 }
 
 function showOverlayContent() {
   console.log("showOverlayContent");
-  // var $show = $('.show');
-  // show.append("<ul class='slides'>");
-  // config
-    var sliderFrequency=2000;
-    var slideSpeed=1000;
-    var width=720;
+  hideTagContent();
+  var $show = $('.show');
+  // var $slideContainer = $show.find('.slide');
+  var $slides = $show.find('.slides');
+  var slideDigit = 1;
+  var interval;
+  var sliderFrequency=2000;
+  var slideSpeed=1000;
+  var width=720;
+  var londonFactsList = []
+  var data = [
+    {"fact" : "But one sunshine,my babe"},
+    {"fact" : "Cold as the rain is hard"},
+    {"fact" : "Filled with eclectics"},
+    {"fact" : "And oh goodie goodie food"},
+    {"fact" : "Prah Prah prah"},
+    {"fact" : "But one sunshine, my babe"}
+  ];
 
-    var $show = $('.show');
-    var $slideContainer = $show.find('.slides');
-    var $slides = $show.find('.slide');
-    var slideDigit = 1;
-    var interval;
+  var $slideContainer = $('<ul class="slides">').appendTo($('#myOverlay'));
+
+  $(data).each(function(index , element){
+
+    londonFactsList.push($('<li class="slide slide' + (index+1) + '">').text(element.fact));
+
+    $slideContainer.append($('<li class="slide slide' + ((index % (data.length-1)) +1) + '">').text(element.fact));
+  });
+
+  // $(".show").append.apply($(".show"),londonFactsList);
+
+  // $(".show").append($('<ul class="slides">')).apply($(".show"),londonFactsList);
+
+
+
+
+
 
     function startSlider(){
         interval=
     setInterval(function(){
         $slideContainer.animate({'margin-left':'-='+width}, slideSpeed,
             function(){
-                        if (++slideDigit === $slides.length){
+                        console.log("slideDigit ",slideDigit);
+
+                        // if (++slideDigit === $slides.length){
+                        if (++slideDigit === 6){
                         slideDigit=1;$slideContainer.css('margin-left',0);
                     }
             });
@@ -201,7 +232,7 @@ function showOverlayContent() {
     }
 
    function stopSlider(){
-    clearInterval(interval);
+     clearInterval(interval);
    }
 
     $slideContainer.mouseenter(stopSlider);
@@ -213,17 +244,26 @@ function showOverlayContent() {
 
 function animateOutOverlayContent() {
   console.log("animateOutOverlayContent");
+  var $ul = $('#myOverlay').find('ul');
+
+  $ul.slideUp(1, function(){
+    $ul.slideDown('slow');
+  });
+  // hideOverlayContent();
 }
 
 function hideOverlayContent() {
   console.log("hideOverlayContent");
+  var $ul = $('#myOverlay').find('ul');
+  $ul.hide();
 }
 
-// This is just here for you to see the tag more easily. You should delete this after starting working.
-// myTag.css('background', 'green');
-// myOverlay.css('background', 'white');
+var $cancel = $('<button>').text('Cancel').appendTo($('body'));
+$cancel.click(function(){
+
+  console.log('cancel clicked')
+  animateOutOverlayContent();
 
 });
 
-// ("<p class='lower-case-text'>click to learn about the</p>" +
-// "<p><span class='upper-case-text'>THE LONDON EYE</span></p>");
+});
